@@ -1,0 +1,70 @@
+﻿{% extends 'layout.html' %}
+
+{% block title%}Contato{% endblock %}
+
+{% block content %}
+  <!-- Contact (Right Sidebar) Start -->
+                 <div class="col-md-9">
+                    <div class="col-md-12 page-body">
+                    	<div class="row">
+
+                            <div class="sub-title">
+                           		<h2>Entre em contato!</h2>
+                                <a href="{% url 'home' %}"><i class="icon-home"></i></a>
+                             </div>
+
+                            <div class="col-md-12 content-page">
+                              <div class="col-md-12 blog-post">
+
+                                <!-- Intro Start -->
+                                <div class="post-title margin-bottom-10">
+                                   <h1>Me envie sua mensagem!</h1>
+                                   </div>
+
+                                  <p>Ou entre contato comigo via minha página no <a href="https://www.facebook.com/%F0%9D%9A%9D%F0%9D%9A%8E%F0%9D%9A%97%F0%9D%9A%9D%F0%9D%9A%8E-%F0%9D%9A%96%F0%9D%9A%8E-%F0%9D%9A%8E%F0%9D%9A%97%F0%9D%9A%9D%F0%9D%9A%8E%F0%9D%9A%97%F0%9D%9A%8D%F0%9D%9A%8E%F0%9D%9A%9B-100288631775653/">facebook</a></p>
+                                     <!-- Intro End -->
+
+
+                               <!-- Contact Me Start -->
+                                <div class="row margin-top-30">
+                                  <div class="col-md-12">
+
+                                  <div class="row">
+                                   <form method="post" action="{% url 'save_form' %}">
+                                       {% csrf_token %}
+					                <div class="col-sm-6">
+						              <div class="form-group">
+						               <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required>
+						              </div>
+                                     </div>
+
+                                    <div class="col-sm-6">
+					                  <div class="form-group">
+						               <input type="email" name="email" id="email" class="form-control" placeholder="Seu Email" required>
+						              </div>
+                                     </div>
+
+                                    <div class="col-sm-12">
+					                  <div class="textarea-message form-group">
+					                    <textarea id="message" name="message" class="textarea-message form-control" placeholder="Sua mensagem" rows="5" required></textarea>
+						            </div>
+                                   </div>
+
+                                <div class="text-center">
+		                          <button type="submit" class="load-more-button">Enviar</button>
+	                             </div>
+
+                                 </form>
+                                </div>
+                              </div>
+                             </div>
+                         </div>
+                        </div>
+                       </div>
+
+                         </div>
+
+
+                  </div>
+                  <!-- Contact (Right Sidebar) End -->
+{% endblock %}

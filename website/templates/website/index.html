@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}  {% endblock %}
+
+{% block content %}
+<!-- Blog Post (Right Sidebar) Start -->
+    <div class="col-md-9">
+    <div class="col-md-12 page-body">
+        <div class="row">
+
+            <div class="sub-title">
+                <h2>Tente me entender</h2>
+             </div>
+
+            <div class="col-md-12 content-page">
+
+                <!-- Blog Post Start -->
+                {% for post in posts %}
+                <div class="col-md-12 blog-post">
+                    <div class="post-title">
+                      <a href="{% url 'single' post.id %}"><h1>{{ post.title }}</h1></a>
+                    </div>
+                    <p>{{ post.sub_title }}</p>
+                    <div class="post-info">
+                        <span>Criado: {{ post.date_post }} / por Melissa Alves</span>
+                    </div>
+
+                    <a href="{% url 'single' post.id %}" class="button button-style button-anim fa fa-long-arrow-right"><span>Ler mais</span></a>
+                </div>
+                {% endfor %}
+                <!-- Blog Post End -->
+
+                <div class="col-md-12 text-center">
+                 <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Subir</a>
+                 <div id="post-end-message"></div>
+                </div>
+
+             </div>
+         </div>
+       </div>
+    </div>
+
+{% endblock %}

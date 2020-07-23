@@ -17,7 +17,7 @@
     <meta name="robots" content="index,follow">
     
     
-    <title>Tente me entender - Home</title>
+    <title>{% block title %} {% endblock %} - Tente me entender</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
@@ -43,7 +43,6 @@
   </head>
 
  <body>
-
 	
      
 	 <!-- Preloader Start -->
@@ -51,16 +50,11 @@
 	   <div class="rounder"></div>
       </div>
       <!-- Preloader End -->
-      
-      
-    
-    
+
     <div id="main">
         <div class="container">
             <div class="row">
-            	
-               
-                 
+
                  <!-- About Me (Left Sidebar) Start -->
                  <div class="col-md-3">
                    <div class="about-fixed">
@@ -75,8 +69,7 @@
                             </ul>
                          </div>
                         </div>
-                      
-                      
+
                       
                       <div class="my-detail">
                     	
@@ -95,52 +88,11 @@
                   </div>
                 </div>
                 <!-- About Me (Left Sidebar) End -->
-                
-                
-                
-                
-                 
-                 <!-- Blog Post (Right Sidebar) Start -->
-                 <div class="col-md-9">
-                    <div class="col-md-12 page-body">
-                    	<div class="row">
-                    		
-                            
-                            <div class="sub-title">
-                                <h2>Tente me entender</h2>
-                             </div>
-                            
-                            
-                            <div class="col-md-12 content-page">
-                            	
-                                
-                                <!-- Blog Post Start -->
-                                {% for post in posts %}
-                                <div class="col-md-12 blog-post">
-                                    <div class="post-title">
-                                      <a href="{% url 'single' post.id %}"><h1>{{ post.title }}</h1></a>
-                                    </div>
-                                    <p>{{ post.sub_title }}</p>
-                                    <div class="post-info">
-                                    	<span>Criado: {{ post.date_post }} / por Melissa Alves</span>
-                                    </div>  
 
-                                    <a href="{% url 'single' post.id %}" class="button button-style button-anim fa fa-long-arrow-right"><span>Ler mais</span></a>
-                                </div>
-                                {% endfor %}
-                                <!-- Blog Post End -->
+                {% block content %}
 
+                {% endblock %}
 
-                                <div class="col-md-12 text-center">
-                                 <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Subir</a>
-                                 <div id="post-end-message"></div>
-                                </div>
-
-                             </div>
-                              
-                         </div>
-
-                     
                        <!-- Footer Start -->
                        <div class="col-md-12 page-body margin-top-50 footer">
                           <footer>

@@ -4,16 +4,16 @@ from .models import *
 
 def home_page(request):
     data = Post.objects.all()
-    return render(request, 'index.html', {'posts': data})
+    return render(request, 'website/index.html', {'posts': data})
 
 
 def single(request, id):
     data = Post.objects.get(id=id)
-    return render(request, 'single.html', {'post': data})
+    return render(request, 'website/single.html', {'post': data})
 
 
 def contato(request):
-    return render(request, 'contact.html')
+    return render(request, 'website/contact.html')
 
 
 def save_form(request):
@@ -26,4 +26,4 @@ def save_form(request):
         email=email,
         message=message
     )
-    return render(request, 'success_form.html', {'name': name, 'email': email, 'message': message})
+    return render(request, 'website/success_form.html', {'name': name, 'email': email, 'message': message})

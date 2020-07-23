@@ -1,0 +1,29 @@
+﻿{% extends 'layout.html' %}
+
+{% block title %} Enviado! {% endblock %}
+
+{% block content %}
+<!-- Blog Post (Right Sidebar) Start -->
+     <div class="col-md-9">
+        <div class="col-md-12 page-body">
+            <div class="row">
+
+                <div class="sub-title">
+                    <a href="{% url 'home' %}"><i class="icon-home"></i></a>
+                 </div>
+
+                <div class="col-md-12 content-page">
+                  <div class="col-md-12 blog-post">
+
+                    <!-- Post Headline Start -->
+                    <div class="post-title">
+                        <h1>Obrigado por sua colaboração!</h1>
+                    </div>
+                      <!-- Post Headline End -->
+                  </div>
+                </div>
+            </div>
+        </div>
+     </div>
+      <!-- Blog Post (Right Sidebar) End -->
+{% endblock %}
