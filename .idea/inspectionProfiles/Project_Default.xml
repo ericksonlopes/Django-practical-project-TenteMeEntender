@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="polls.models.Question.objects" />
+          <option value="polls.models.Question.DoesNotExist" />
+          <option value="polls.models.Choice.DoesNotExist" />
+          <option value="website.models.Post.objects" />
+          <option value="website.models.Post.get_cetegories_display" />
+          <option value="website.models.Contact.Objects" />
+          <option value="website.models.Contact.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

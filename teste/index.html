@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Blog - Erickson</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="{% static 'images/avatar1.jpg' %}" alt="" /></a>
+					<h1><strong>olá, sou o Erickson</strong>
+						Este projeto é uma atividade de um curso realizado pela plataforma <a href="https://www.udemy.com/course/web-sites-django-3/">udemy</a><br /></h1>
+					<h1 >Repositório no git-hub <a href="https://github.com/Erickson-lopes-dev">Aqui</a></h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Erickson Lopes - Blog</h2>
+						</header>
+						<p>
+							Foi uma experiência e tanto desenvolver essa página!
+							<br />
+							Como teste, Coloquei alguns dos grandes filósofos e um pouco de sua biografia.
+
+						</p>
+						<ul class="actions">
+							<li><a href="https://www.linkedin.com/in/ericksonlopesdev/" class="button">Saber mais sobre Erickson</a></li>
+						</ul>
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>Posts</h2>
+						<div class="row">
+							{% for post in posts %}
+								<article class="col-6 col-12-xsmall work-item">
+									<a href="{{ post.imagem.url }}" class="image fit thumb">
+										<img src="{{ post.imagem.url }}" alt="{{ post.title }}" height="400" />
+									</a>
+									<h3>{{ post.title }}</h3>
+									<p>{{ post.sub_title }}</p>
+									<span>{{ post.get_category_label }}</span>
+									<ul class="actions">
+							<li>
+								<a href="{% url 'post_detail' post.id %}" class="button">Leia mais</a></li>
+							</ul>
+								</article>
+							{% endfor %}
+						</div>
+						<ul class="actions">
+							<li><a href="#" class="button">Voltar ao topo</a></li>
+						</ul>
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Entre em Contato</h2>
+						<p>Me mande uma mensagem! tentarei retornar assim que possível.</p>
+						<div class="row">
+							<div class="col-8 col-12-small">
+								<form method="post" action="{% url 'save_form' %}">
+									{% csrf_token %}
+									<div class="row gtr-uniform gtr-50">
+										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+									</div>
+										<input type="submit" value="Enviar mensagem" />
+
+								</form>
+
+							</div>
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+										(11) 94360-****
+									</li>
+									<li>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										ericksonlopes20@gmail.com
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://twitter.com/erickson_lds" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/Erickson-lopes-dev" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>
