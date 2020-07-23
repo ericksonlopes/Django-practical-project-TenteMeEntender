@@ -132,23 +132,23 @@
                                   <div class="col-md-12">   
                  
                                   <div class="row">
-                                   <form>
-                    
+                                   <form method="post" action="{% url 'save_form' %}">
+                                       {% csrf_token %}
 					                <div class="col-sm-6">
 						              <div class="form-group">
-						               <input type="text" id="name" class="form-control" placeholder="Seu nome">
+						               <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" required>
 						              </div>
                                      </div>
 								
                                     <div class="col-sm-6">
 					                  <div class="form-group">
-						               <input type="email" id="email" class="form-control" placeholder="Seu Email">
+						               <input type="email" name="email" id="email" class="form-control" placeholder="Seu Email" required>
 						              </div>
                                      </div>
 
                                     <div class="col-sm-12">
 					                  <div class="textarea-message form-group">
-					                    <textarea id="message" class="textarea-message form-control" placeholder="Sua mensagem" rows="5"></textarea>
+					                    <textarea id="message" name="message" class="textarea-message form-control" placeholder="Sua mensagem" rows="5" required></textarea>
 						            </div>
                                    </div>
                    
