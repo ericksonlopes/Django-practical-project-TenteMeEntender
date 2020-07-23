@@ -10,3 +10,13 @@ def home_page(request):
 def single(request, id):
     data = Post.objects.get(id=id)
     return render(request, 'single.html', {'post': data})
+
+
+def contato(request):
+    return render(request, 'contact.html')
+
+
+def save_form(request):
+    name = request.POST['name']
+    email = request.POST['email']
+    message = request.POST['message']
