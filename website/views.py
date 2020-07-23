@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import *
 
 
 def home_page(request):
@@ -20,3 +20,10 @@ def save_form(request):
     name = request.POST['name']
     email = request.POST['email']
     message = request.POST['message']
+
+    Contact.objects.create(
+        name=name,
+        email=email,
+        message=message
+    )
+    return render(request, 'success_form.html', {'name': name, 'email': email, 'message': message})
