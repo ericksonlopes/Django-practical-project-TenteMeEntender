@@ -7,3 +7,6 @@ def home_page(request):
     return render(request, 'index.html', {'posts': data})
 
 
+def single(request, id):
+    data = Post.objects.get(id=id)
+    return render(request, 'single.html', {'post': data})

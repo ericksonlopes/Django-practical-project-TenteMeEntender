@@ -17,7 +17,7 @@
     <meta name="robots" content="index,follow">
     
     
-    <title>DevBlog - Personal Blog Template</title>
+    <title>Tente me entender - Home</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
@@ -70,9 +70,9 @@
                         <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i class="icon-menu menu"></i></a>
                          <div id="menu" class="collapse">
                            <ul class="menu-link">
-                               <li><a href="about.html">About</a></li>
-                               <li><a href="work.html">Work</a></li>
-                               <li><a href="contact.html">Contact</a></li>
+                               <li><a href="{% url 'home' %}">Home</a></li>
+                               <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                               <li><a href="{% url 'contato' %}">Contato</a></li>
                             </ul>
                          </div>
                         </div>
@@ -107,8 +107,7 @@
                     		
                             
                             <div class="sub-title">
-                           		<h2>Tente me entender</h2>
-<!--                                <a href="contact.html"><i class="icon-envelope"></i></a>-->
+                                <h2>Tente me entender</h2>
                              </div>
                             
                             
@@ -119,66 +118,44 @@
                                 {% for post in posts %}
                                 <div class="col-md-12 blog-post">
                                     <div class="post-title">
-                                      <a href="single.html"><h1>{{ post.title }}</h1></a>
+                                      <a href="{% url 'single' post.id %}"><h1>{{ post.title }}</h1></a>
                                     </div>
                                     <p>{{ post.sub_title }}</p>
                                     <div class="post-info">
                                     	<span>Criado: {{ post.date_post }} / por Melissa Alves</span>
                                     </div>  
 
-                                    <a href="single.html" class="button button-style button-anim fa fa-long-arrow-right"><span>Ler mais</span></a>
+                                    <a href="{% url 'single' post.id %}" class="button button-style button-anim fa fa-long-arrow-right"><span>Ler mais</span></a>
                                 </div>
                                 {% endfor %}
                                 <!-- Blog Post End -->
 
-                                
+
                                 <div class="col-md-12 text-center">
                                  <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Subir</a>
                                  <div id="post-end-message"></div>
                                 </div>
-                                
+
                              </div>
                               
                          </div>
-                         
-                        
-                        
-                        <!-- Subscribe Form Start -->
-                        <div class="col-md-8 col-md-offset-2">
-                           <form id="mc-form" method="post" action="http://uipasta.us14.list-manage.com/subscribe/post?u=854825d502cdc101233c08a21&amp;id=86e84d44b7">
-								
-						  <div class="subscribe-form margin-top-20">
-							 <input id="mc-email" type="email" placeholder="Email Address" class="text-input">
-							  <button class="submit-btn" type="submit">Submit</button>
-								</div>
-                                <p>Subscribe to my weekly newsletter</p>
-								<label for="mc-email" class="mc-label"></label>
-							  </form>
-                             
-                           </div>
-                           <!-- Subscribe Form End -->
-                           
-                         </div>
-                     
+
                      
                        <!-- Footer Start -->
                        <div class="col-md-12 page-body margin-top-50 footer">
                           <footer>
                           <ul class="menu-link">
-                               <li><a href="index.html">Home</a></li>
-                               <li><a href="about.html">About</a></li>
-                               <li><a href="work.html">Work</a></li>
-                               <li><a href="contact.html">Contact</a></li>
+                               <li><a href="{% url 'home' %}">Home</a></li>
+                               <li><a href="{% url 'sobre' %}">Sobre</a></li>
+                               <li><a href="{% url 'contato' %}">Contato</a></li>
                             </ul>
-                            
-                          <p>© Copyright 2016 DevBlog. All rights reserved</p>
-						  
-						  
+
+
 						  <!-- UiPasta Credit Start -->
-                          <div class="uipasta-credit">Design By <a href="http://www.uipasta.com" target="_blank">UiPasta</a></div>
+                          <div class="uipasta-credit">Site criado por: <a href="https://www.linkedin.com/in/ericksonlopesdev/" target="_blank">Erickson Lopes</a></div>
                           <!-- UiPasta Credit End -->
 
-                           
+
                          </footer>
                        </div>
                        <!-- Footer End -->
