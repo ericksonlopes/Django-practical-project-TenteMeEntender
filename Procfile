@@ -1,0 +1,1 @@
+web: gunicorn tente_me_entender.wsgi
