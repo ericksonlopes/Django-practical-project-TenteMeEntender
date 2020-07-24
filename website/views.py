@@ -27,3 +27,7 @@ def save_form(request):
         message=message
     )
     return render(request, 'website/success_form.html', {'name': name, 'email': email, 'message': message})
+
+
+def about(request):
+    return render(request, 'website/about.html')
